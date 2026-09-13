@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Technology — Computer Repair & Refurbished PCs, Ahmedabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2430;
+    --paper:#EFEEE9;
+    --white:#FFFFFF;
+    --amber:#E2900B;
+    --amber-dark:#B86F05;
+    --teal:#1F6F6B;
+    --teal-dark:#154E4B;
+    --slate:#5B6472;
+    --line:#DAD7CE;
+    --whatsapp:#25D366;
+    --radius-sm:4px;
+    --radius-md:10px;
+    --font-head:'IBM Plex Sans Condensed', sans-serif;
+    --font-body:'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.5;}
+  h1,h2,h3{font-family:var(--font-head);}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+  section{scroll-margin-top:88px;}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
+
+  /* ---- demo ribbon ---- */
+  .demo-ribbon{background:var(--ink);color:var(--paper);text-align:center;font-size:0.8rem;padding:8px 16px;}
+  .demo-ribbon strong{color:var(--amber);}
+
+  /* ---- header ---- */
+  .site-header{position:sticky;top:0;z-index:50;background:rgba(239,238,233,0.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px;}
+  .logo{font-weight:700;font-size:1.4rem;line-height:1;white-space:nowrap;}
+  .logo span{color:var(--teal);}
+  .main-nav{display:flex;gap:26px;list-style:none;margin:0;padding:0;}
+  .main-nav a{text-decoration:none;font-weight:500;font-size:0.95rem;}
+  .main-nav a:hover{color:var(--teal);}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .nav-toggle{display:none;background:none;border:2px solid var(--ink);border-radius:var(--radius-sm);width:42px;height:42px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:4px;}
+  .nav-toggle span{width:20px;height:2px;background:var(--ink);display:block;}
+
+  /* ---- buttons ---- */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--radius-sm);font-weight:600;font-size:0.95rem;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--font-body);}
+  .btn svg{width:18px;height:18px;}
+  .btn-amber{background:var(--amber);color:var(--ink);}
+  .btn-amber:hover{background:var(--amber-dark);}
+  .btn-outline{background:transparent;border-color:var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  .btn-whatsapp{background:var(--whatsapp);color:#fff;}
+  .btn-whatsapp:hover{background:#1fb457;}
+  .btn-block{width:100%;justify-content:center;}
+  .btn-sm{padding:9px 16px;font-size:0.85rem;}
+
+  /* ---- hero ---- */
+  .hero{padding:64px 0 56px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:52px;align-items:center;}
+  .hero-kicker{font-size:0.98rem;color:var(--teal-dark);font-weight:600;margin-bottom:14px;}
+  .hero h1{font-size:clamp(2.1rem,4vw,3.15rem);line-height:1.1;margin:0 0 18px;font-weight:700;}
+  .hero .lead{font-size:1.06rem;color:var(--slate);max-width:46ch;margin:0 0 28px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+  .trust-strip{display:flex;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:20px;}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;padding:6px 20px 6px 0;margin-right:20px;border-right:1px solid var(--line);}
+  .trust-item:last-child{border-right:none;margin-right:0;}
+  .trust-item svg{width:18px;height:18px;color:var(--teal);flex-shrink:0;}
+
+  .hero-art{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:28px;position:relative;}
+  .hero-art svg{width:100%;height:auto;}
+
+  @media (prefers-reduced-motion:no-preference){
+    .draw-in{stroke-dasharray:340;stroke-dashoffset:340;animation:draw 1.4s ease forwards .2s;}
+    .pop-in{opacity:0;transform:scale(.7);animation:pop .5s cubic-bezier(.34,1.56,.64,1) forwards 1.1s;}
+  }
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes pop{to{opacity:1;transform:scale(1);}}
+
+  /* ---- section headings ---- */
+  .section-head{max-width:60ch;margin-bottom:36px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 10px;}
+  .section-head p{color:var(--slate);margin:0;font-size:1rem;}
+  .section{padding:64px 0;}
+  .section-alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  /* ---- services ---- */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);padding:22px;transition:border-color .2s ease;}
+  .service-card:hover{border-color:var(--teal);}
+  .service-card svg{width:32px;height:32px;color:var(--teal);margin-bottom:14px;}
+  .service-card h3{font-size:1.05rem;margin:0 0 6px;}
+  .service-card p{font-size:0.88rem;color:var(--slate);margin:0;}
+
+  /* ---- second hand ---- */
+  .pc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .pc-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-md);padding:20px;display:flex;flex-direction:column;}
+  .pc-icon{width:44px;height:44px;color:var(--teal);margin-bottom:14px;}
+  .pc-badge{align-self:flex-start;font-size:0.72rem;font-weight:600;background:var(--teal);color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px;}
+  .pc-card h3{font-size:1.02rem;margin:0 0 4px;}
+  .pc-card .pc-type{font-size:0.82rem;color:var(--slate);margin-bottom:10px;}
+  .pc-specs{list-style:none;font-size:0.85rem;color:var(--slate);margin:0 0 12px;padding:0;}
+  .pc-specs li{padding:2px 0;}
+  .pc-price{font-size:1.35rem;font-weight:700;margin:0 0 14px;}
+  .pc-note{margin-top:28px;font-size:0.92rem;color:var(--slate);text-align:center;}
+  .pc-note a{color:var(--teal-dark);font-weight:600;text-decoration:underline;}
+
+  /* ---- how it works ---- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;}
+  .step-num{width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.05rem;margin-bottom:16px;}
+  .step h3{font-size:1rem;margin:0 0 6px;}
+  .step p{font-size:0.88rem;color:var(--slate);margin:0;}
+
+  /* ---- offers ---- */
+  .offers{background:var(--amber);}
+  .offers .section-head h2, .offers .section-head p{color:var(--ink);}
+  .offer-chips{display:flex;flex-wrap:wrap;gap:14px;}
+  .offer-chip{background:var(--ink);color:var(--paper);padding:16px 20px;border-radius:var(--radius-sm);font-weight:600;font-size:0.95rem;flex:1 1 260px;}
+  .offers-note{margin-top:18px;font-size:0.85rem;color:var(--ink);opacity:0.75;}
+
+  /* ---- why us ---- */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .why-item svg{width:30px;height:30px;color:var(--teal);margin-bottom:14px;}
+  .why-item h3{font-size:1rem;margin:0 0 6px;}
+  .why-item p{font-size:0.88rem;color:var(--slate);margin:0;}
+
+  /* ---- testimonials ---- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .testi-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-md);padding:22px;}
+  .stars{color:var(--amber-dark);font-size:0.95rem;margin-bottom:10px;letter-spacing:2px;}
+  .testi-card p.quote{font-size:0.95rem;margin:0 0 14px;}
+  .testi-card .who{font-size:0.85rem;color:var(--slate);font-weight:600;}
+
+  /* ---- contact ---- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .contact-info li{list-style:none;display:flex;gap:12px;margin-bottom:16px;font-size:0.95rem;}
+  .contact-info{padding:0;margin:0 0 28px;}
+  .contact-info svg{width:20px;height:20px;color:var(--teal);flex-shrink:0;margin-top:2px;}
+  .form-field{margin-bottom:18px;}
+  .form-field label{display:block;font-size:0.85rem;color:var(--slate);margin-bottom:6px;}
+  .form-field input,.form-field textarea{width:100%;border:none;border-bottom:2px solid var(--line);background:transparent;padding:10px 4px;font-family:var(--font-body);font-size:0.98rem;color:var(--ink);}
+  .form-field input:focus,.form-field textarea:focus{border-color:var(--teal);outline:none;}
+  .form-note{font-size:0.85rem;color:var(--slate);margin-top:10px;}
+  .map-box{background:var(--white);border:1px dashed var(--line);border-radius:var(--radius-md);height:100%;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;}
+  .map-box svg{width:44px;height:44px;color:var(--teal);margin-bottom:14px;}
+  .map-box p{color:var(--slate);font-size:0.9rem;max-width:28ch;margin:0;}
+
+  /* ---- footer ---- */
+  footer{background:var(--ink);color:var(--paper);padding:48px 0 0;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:36px;}
+  .footer-logo{font-size:1.3rem;font-weight:700;margin-bottom:10px;}
+  .footer-tag{font-size:0.9rem;color:#B7BEC8;max-width:32ch;}
+  .footer-col h4{font-size:0.9rem;margin:0 0 14px;color:#B7BEC8;font-weight:600;}
+  .footer-col ul{list-style:none;padding:0;margin:0;}
+  .footer-col li{margin-bottom:10px;}
+  .footer-col a{text-decoration:none;font-size:0.92rem;color:var(--paper);}
+  .footer-col a:hover{color:var(--amber);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.15);padding:18px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:0.8rem;color:#9AA2AD;}
+
+  /* ---- whatsapp float ---- */
+  .wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:var(--whatsapp);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.28);z-index:60;text-decoration:none;}
+  .wa-float svg{width:28px;height:28px;color:#fff;}
+  .wa-ring{position:absolute;inset:0;border-radius:50%;border:2px solid var(--whatsapp);}
+  @media (prefers-reduced-motion:no-preference){
+    .wa-ring{animation:ring 2.2s ease-out infinite;}
+  }
+  @keyframes ring{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.6);opacity:0;}}
+
+  /* ---- responsive ---- */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-art{order:-1;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .pc-grid{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:680px){
+    .main-nav{position:fixed;top:76px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;padding:18px 24px;gap:16px;display:none;}
+    .main-nav.open{display:flex;}
+    .nav-toggle{display:flex;}
+    .header-actions .btn-outline-text{display:none;}
+    .services-grid{grid-template-columns:1fr;}
+    .pc-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .offer-chip{flex:1 1 100%;}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon">This is a <strong>sample demo</strong> for Krishna Technology — replace placeholder text, prices, address & phone with real details.</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">Krishna <span>Technology</span></div>
+    <ul class="main-nav" id="mainNav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#secondhand">Second-Hand PCs</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="header-actions">
+      <a href="tel:+919999999999" class="btn btn-amber btn-sm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="hero-kicker">Ahmedabad's Neighbourhood Computer Shop</p>
+        <h1>We Fix Computers. We Sell Them Too.</h1>
+        <p class="lead">Honest repairs, tested refurbished laptops &amp; desktops, and straight-talk pricing — all from one shop you can walk into.</p>
+        <div class="hero-ctas">
+          <a href="tel:+919999999999" class="btn btn-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/919999999999" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.82.84-3.06-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.9.9 0 0 0-.66.31c-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+        <div class="trust-strip">
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>10+ Years in Ahmedabad</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Genuine Parts Only</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1.5"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18.5" cy="19" r="1.6"/></svg>Free Pickup &amp; Drop</div>
+          <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>90-Day Repair Warranty</div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="70" cy="70" r="4" fill="var(--teal)"/>
+          <circle cx="110" cy="45" r="3" fill="var(--amber)"/>
+          <circle cx="140" cy="85" r="3" fill="var(--teal)"/>
+          <polyline points="70,70 110,45 140,85" fill="none" stroke="var(--teal)" stroke-width="1.5" opacity="0.5"/>
+          <path d="M150 230 L390 230 L410 260 L130 260 Z" fill="var(--ink)"/>
+          <rect x="140" y="60" width="220" height="150" rx="14" fill="var(--white)" stroke="var(--ink)" stroke-width="4"/>
+          <rect x="156" y="76" width="188" height="118" rx="4" fill="var(--paper)"/>
+          <rect x="172" y="98" width="120" height="8" rx="4" fill="var(--teal)"/>
+          <rect x="172" y="118" width="90" height="8" rx="4" fill="var(--amber)"/>
+          <rect x="172" y="138" width="140" height="8" rx="4" fill="var(--teal)" opacity="0.55"/>
+          <g class="draw-in" stroke="var(--slate)" fill="none">
+            <path d="M330 140 L365 175" stroke-width="18" stroke-linecap="round"/>
+          </g>
+          <g transform="rotate(45 345 155)">
+            <rect x="335" y="90" width="20" height="130" rx="8" fill="var(--slate)"/>
+            <rect x="327" y="205" width="36" height="55" rx="10" fill="var(--amber)"/>
+          </g>
+          <g class="pop-in">
+            <circle cx="405" cy="95" r="28" fill="var(--teal)"/>
+            <path d="M393 96l8 8 16-17" fill="none" stroke="var(--white)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>What We Repair &amp; Maintain</h2>
+        <p>From a cracked screen to a computer that won't boot — bring it in or call us out.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M1 19h22l-2-3H3z"/></svg>
+          <h3>Laptop Repair</h3>
+          <p>Screen, keyboard, battery, hinge and motherboard-level repairs.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="1.2"/><path d="M9 19h6M12 15v4"/></svg>
+          <h3>Desktop Repair</h3>
+          <p>Diagnosis and fixes for slow, noisy or dead desktops.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+          <h3>Data Recovery</h3>
+          <p>Retrieve files from crashed drives and corrupted systems.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Virus &amp; Malware Removal</h3>
+          <p>Deep cleaning to get rid of pop-ups, slowdowns and threats.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 8l3 3-2 2 3 3"/></svg>
+          <h3>Screen Replacement</h3>
+          <p>Original and compatible panels fitted while you wait.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"/></svg>
+          <h3>RAM / SSD Upgrade</h3>
+          <p>Make an old machine feel new again, same day.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></svg>
+          <h3>Printer Repair</h3>
+          <p>Jams, print quality issues and driver setup, sorted.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 3v4M16 3v4"/><circle cx="12" cy="15" r="3.2"/><path d="M12 13.5v1.7l1.2 1"/></svg>
+          <h3>Annual Maintenance (AMC)</h3>
+          <p>Scheduled servicing so problems get caught early.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECOND HAND -->
+  <section id="secondhand" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Refurbished Computers, Ready to Use</h2>
+        <p>Every second-hand machine is tested, cleaned and comes with a repair warranty.</p>
+      </div>
+      <div class="pc-grid">
+        <div class="pc-card">
+          <svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="11" rx="1.2"/><path d="M9 19h6M12 15v4"/></svg>
+          <span class="pc-badge">Grade A · Like New</span>
+          <h3>Dell OptiPlex 3020</h3>
+          <p class="pc-type">Desktop Tower</p>
+          <ul class="pc-specs"><li>Intel Core i5</li><li>4GB RAM</li><li>500GB HDD</li></ul>
+          <p class="pc-price">₹9,999</p>
+          <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Dell%20OptiPlex%203020" class="btn btn-whatsapp btn-sm btn-block" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+        </div>
+        <div class="pc-card">
+          <svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M1 19h22l-2-3H3z"/></svg>
+          <span class="pc-badge">Grade B · Good Condition</span>
+          <h3>HP ProBook</h3>
+          <p class="pc-type">Laptop</p>
+          <ul class="pc-specs"><li>Intel Core i3</li><li>4GB RAM</li><li>320GB HDD</li></ul>
+          <p class="pc-price">₹8,499</p>
+          <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20HP%20ProBook" class="btn btn-whatsapp btn-sm btn-block" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+        </div>
+        <div class="pc-card">
+          <svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="11" rx="1.2"/><path d="M9 19h6M12 15v4"/></svg>
+          <span class="pc-badge">Grade A · Like New</span>
+          <h3>Lenovo ThinkCentre</h3>
+          <p class="pc-type">Desktop Tower</p>
+          <ul class="pc-specs"><li>Intel Core i5</li><li>8GB RAM</li><li>256GB SSD</li></ul>
+          <p class="pc-price">₹12,999</p>
+          <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Lenovo%20ThinkCentre" class="btn btn-whatsapp btn-sm btn-block" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+        </div>
+        <div class="pc-card">
+          <svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M1 19h22l-2-3H3z"/></svg>
+          <span class="pc-badge">Grade A · Like New</span>
+          <h3>Acer Aspire</h3>
+          <p class="pc-type">Laptop</p>
+          <ul class="pc-specs"><li>Intel Core i5</li><li>8GB RAM</li><li>1TB HDD</li></ul>
+          <p class="pc-price">₹13,999</p>
+          <a href="https://wa.me/919999999999?text=Hi%2C%20I%27m%20interested%20in%20the%20Acer%20Aspire" class="btn btn-whatsapp btn-sm btn-block" target="_blank" rel="noopener">Enquire on WhatsApp</a>
+        </div>
+      </div>
+      <p class="pc-note">Stock changes daily — <a href="https://wa.me/919999999999?text=Hi%2C%20can%20you%20share%20today%27s%20full%20stock%20list%3F" target="_blank" rel="noopener">message us on WhatsApp</a> for the full list and today's best deals.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>How a Repair Works</h2>
+        <p>No jargon, no guesswork — here's exactly what happens when you bring something in.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><h3>Book a Slot</h3><p>Call or message us your problem; we tell you what to bring.</p></div>
+        <div class="step"><div class="step-num">2</div><h3>Free Diagnosis</h3><p>We check the issue in front of you, no guesswork.</p></div>
+        <div class="step"><div class="step-num">3</div><h3>Upfront Quote</h3><p>You approve the price before any repair starts.</p></div>
+        <div class="step"><div class="step-num">4</div><h3>Ready in Hours</h3><p>Most repairs are done same-day, with pickup or delivery.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section id="offers" class="section offers">
+    <div class="container">
+      <div class="section-head">
+        <h2>This Month at Krishna Technology</h2>
+        <p>Simple, honest deals — no fine print.</p>
+      </div>
+      <div class="offer-chips">
+        <div class="offer-chip">Free data backup with any laptop repair</div>
+        <div class="offer-chip">10% off refurbished PCs above ₹10,000</div>
+        <div class="offer-chip">Free home pickup within city limits</div>
+      </div>
+      <p class="offers-note">(Sample offers — swap these for your real monthly deals any time.)</p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why Ahmedabad Trusts Us</h2>
+        <p>Ten years of fixing, upgrading and selling computers — the honest way.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Certified Technicians</h3>
+          <p>Every repair is handled by a trained technician, not a trial-and-error guess.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Genuine Spare Parts</h3>
+          <p>We use original or high-quality compatible parts and tell you which one you're getting.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          <h3>Transparent Pricing</h3>
+          <p>You get a written quote before we touch your device. No surprise charges.</p>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1.5"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18.5" cy="19" r="1.6"/></svg>
+          <h3>Doorstep Service</h3>
+          <p>Can't come to the shop? We pick up, repair and drop back your device.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>From Our Customers</h2>
+        <p>Sample reviews — replace with your own once real ones start coming in.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Got my laptop screen replaced in under 3 hours. Fair price and they showed me the old part too."</p>
+          <p class="who">Rajesh P. — Navrangpura</p>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Bought a refurbished desktop for my daughter's online classes. Still running fine after a year."</p>
+          <p class="who">Meena S. — Satellite</p>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"They recovered photos from my crashed hard drive that I thought were gone forever."</p>
+          <p class="who">Aakash T. — Vastrapur</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Visit or Reach Out</h2>
+        <p>Drop by the shop, call, or send us a message — whichever's easiest.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <ul class="contact-info">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>[Shop No.], [Building/Complex], [Area], Ahmedabad, Gujarat</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 XXXXX XXXXX (Call &amp; WhatsApp)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Mon–Sat: 10:00 AM – 8:00 PM · Sun: 11:00 AM – 5:00 PM</li>
+          </ul>
+          <form id="contactForm">
+            <div class="form-field"><label for="cf-name">Name</label><input id="cf-name" type="text" placeholder="Your name" required></div>
+            <div class="form-field"><label for="cf-phone">Phone Number</label><input id="cf-phone" type="tel" placeholder="Your phone number" required></div>
+            <div class="form-field"><label for="cf-msg">What's the issue?</label><textarea id="cf-msg" rows="3" placeholder="Briefly describe your device and problem"></textarea></div>
+            <button type="submit" class="btn btn-amber">Send Message</button>
+            <p class="form-note" id="formNote" hidden>Thanks! This is a demo form — connect it to email/WhatsApp before going live.</p>
+          </form>
+        </div>
+        <div class="map-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Your Google Maps location will be embedded here, with directions and a pin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Krishna Technology</div>
+        <p class="footer-tag">Ahmedabad's trusted computer repair &amp; refurbished PC shop.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#secondhand">Second-Hand PCs</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919999999999">+91 XXXXX XXXXX</a></li>
+          <li><a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          <li>Ahmedabad, Gujarat</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Krishna Technology. All rights reserved.</span>
+      <span>Demo design — final content, photos &amp; prices to be confirmed.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919999999999" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-ring"></span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.82.84-3.06-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.9.9 0 0 0-.66.31c-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+</a>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  const formNote = document.getElementById('formNote');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formNote.hidden = false;
+    contactForm.reset();
+  });
+</script>
+
+</body>
+</html>
